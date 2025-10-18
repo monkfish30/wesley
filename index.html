@@ -3,116 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Florista - Book a Visit</title>
-<link rel="stylesheet" href="styles.css">
-<style>
-/* Page-specific styles */
-.booking-container {
-  max-width: 600px;
-  margin: 60px auto;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  background-color: #fff;
-}
-
-.booking-container h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #e91e63;
-}
-
-.booking-container p {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #555;
-}
-
-.booking-container form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-input, select, textarea, button {
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  border-color: #e91e63;
-  box-shadow: 0 0 0 1px #e91e63;
-}
-
-button {
-  background-color: #e91e63;
-  color: #fff;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background-color: #d81b60;
-}
-
-footer {
-  text-align: center;
-  margin-top: 60px;
-  padding: 20px;
-  color: #666;
-  font-size: 0.875rem;
-}
-</style>
+<title>Florista Corporate Flowers</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="container">
   <h1>Florista</h1>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="#booking">Book a Visit</a>
-    <a href="index.html#contact">Contact</a>
+    <a href="#services">Services</a>
+    <a href="#work">Our Work</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<main class="booking-container">
-  <h1>Schedule a Visit</h1>
-  <p>Choose a date and time for us to come out and visit your business.</p>
-
-  <form onsubmit="handleBooking(event)">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <input type="tel" name="phone" placeholder="Phone Number" required>
-    <label for="date">Select a Date:</label>
-    <input type="date" id="date" name="date" required>
-    <label for="time">Select a Time:</label>
-    <input type="time" id="time" name="time" required>
-    <textarea name="notes" placeholder="Additional Notes" rows="4"></textarea>
-    <button type="submit">Book Visit</button>
-    <p id="confirmationMsg" style="display:none; color:green; text-align:center; margin-top:10px;">Thank you! Your booking has been received.</p>
-  </form>
+<main class="hero container">
+  <div class="content">
+    <h1>Beautiful Flowers for Your Business</h1>
+    <p>We deliver fresh, high-quality arrangements to offices, hotels, and retail spaces. Enhance your workspace with our professional floral services.</p>
+    <div class="buttons">
+      <a href="#contact" class="primary">Get a Quote</a>
+      <a href="#services" class="secondary">View Services</a>
+    </div>
+  </div>
+  <div class="image">
+    <img src="/images/tulips.jpg" alt="Flowers in office">
+  </div>
 </main>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <p class="section-desc">Tailored solutions for your business needs.</p>
+  <div class="cards cards-3 container">
+    <div class="card">Weekly Office Deliveries</div>
+    <div class="card">Event Installations</div>
+    <div class="card">Corporate Gifting</div>
+  </div>
+</section>
+
+<section id="work">
+  <h2>Our Work</h2>
+  <p class="section-desc">See our past office and event arrangements.</p>
+  <div class="cards cards-3 container">
+    <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6?q=80&w=400" alt="Office arrangement">
+    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=400" alt="Event flowers">
+    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400" alt="Lobby flowers">
+  </div>
+</section>
+
+<section id="pricing">
+  <h2>Pricing</h2>
+  <p class="section-desc">Packages for businesses of all sizes.</p>
+  <div class="cards cards-3 container">
+    <div class="card">
+      <h3>Starter</h3>
+      <p>$120 / week</p>
+    </div>
+    <div class="card">
+      <h3>Business</h3>
+      <p>$250 / week</p>
+    </div>
+    <div class="card">
+      <h3>Enterprise</h3>
+      <p>$500 / week</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <form onsubmit="alert('Thank you! We will be in touch.'); return false;">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
 
 <footer>
   © 2025 Florista. All rights reserved.
 </footer>
 
-<script>
-function handleBooking(e){
-  e.preventDefault();
-  // In production, send form data to your server here
-  const msg = document.getElementById('confirmationMsg');
-  msg.style.display = 'block';
-  e.target.reset();
-  setTimeout(() => { msg.style.display='none'; }, 5000);
-}
-</script>
-
 </body>
 </html>
+
+
 
